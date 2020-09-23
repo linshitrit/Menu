@@ -10,6 +10,6 @@ namespace MenuProject
 {
     public interface IDataReader<T>
     {
-        string Read(IMenu<T> menu);
+        int Read(IMenu<T> menu);
     }
 }

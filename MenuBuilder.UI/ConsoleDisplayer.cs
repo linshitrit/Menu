@@ -13,7 +13,7 @@ namespace MenuBuilder.UI
            
             foreach (KeyValuePair<T, IOption> option in Menu.Options )
             {
-                Console.WriteLine($"Key = {option.Key}, Value = {option.Value.Name}");
+                Console.WriteLine($" *{option.Key},{option.Value.Name}");
             }
         }
     }

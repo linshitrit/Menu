@@ -22,7 +22,7 @@ namespace MenuBuilder.Core
 
         public string Run()
         {
-            Menu<int> menu = new Menu<int>();
+           // Menu<int,IOption> menu = new Menu<int,IOption>();
             string input = "welcom";
             return input;
         }

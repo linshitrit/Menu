@@ -17,20 +17,19 @@ namespace MenuExampleProject
             Option1 firstOption = new Option1();
             Option2 secondOption = new Option2();
             Option4 lastOption = new Option4();
-            IMenu<int> menu = new Menu<int>();
+            IDictionary<int, IOption> dictionary = new Dictionary<int, IOption>();
+            IMenu<int> menu = new Menu<int>(dictionary);
             MengedMenu<int> mengedMenu = new MengedMenu<int>();
             mengedMenu.AddOption(1, firstOption, menu);
-            mengedMenu.AddOption(1, secondOption, menu);
-            mengedMenu.AddOption(1, lastOption, menu);
+            mengedMenu.AddOption(2, secondOption, menu);
+            mengedMenu.AddOption(4, lastOption, menu);
             IDisplayerMenu<int> displayMenu = new ConsoleDisplayer<int>();
             IValidator<int> validator = new MenuValidator<int>();
             IReader reader = new ConsoleReader();
             IDataReader<int> dataReader = new DataReader<int>(validator,reader);
-            UserMenu<int> mainMenu = new UserMenu<int>(displayMenu, dataReader);
+            UserMenu<int> mainMenu = new UserMenu<int>(displayMenu, dataReader);   
             mainMenu.Run(menu);
-
-
- 
         }
     }
+
 }

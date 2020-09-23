@@ -10,5 +10,7 @@ namespace MenuBuilder.Core
     public interface IMenu<T>
     {
         IDictionary<T, IOption> Options { get; set; }
+
+      
     }
 }

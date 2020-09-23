@@ -11,5 +11,7 @@ namespace MenuBuilder.Core
         string Name { get; set; }
         string Run();
 
+    
+
     }
 }

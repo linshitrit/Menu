@@ -24,7 +24,7 @@ namespace MenuProject.BL
 
         public bool CheckOption(string input, IMenu<T> menu)
         {
-            return menu.Options.Any(option => option.ToString() == input);
+            return menu.Options.Any(option => option.Key.ToString() == input);
         }
     }
 }

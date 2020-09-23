@@ -9,32 +9,29 @@ using System.Threading.Tasks;
 
 namespace MenuProject
 {
-   public class DataReader<T> : IDataReader<T>
+    public class DataReader<T> : IDataReader<T>
     {
         public IValidator<T> Validator { get; set; }
         public IReader Reader { get; set; }
-       
+
 
         public DataReader(IValidator<T> validator, IReader reader)
         {
             Validator = validator;
             Reader = reader;
         }
-       public string Read(IMenu<T> menu)
+        public int Read(IMenu<T> menu)
         {
-           while (true)
+            string input = Reader.ReadString();
+            if (Validator.CheckOption(input, menu))
             {
-                if (typeof(T) == (typeof(int)))
+                if (int.TryParse(input, out int result))
                 {
-                    string input1 = Reader.ReadString();
-                    bool validInt = Validator.CheckOption(input1, menu);
-                    if (!validInt)
-                    {
-                        return "the input is not valid";
-                    }
+                    return result;
                 }
             }
-           
+
+            return -1;
         }
 
     }

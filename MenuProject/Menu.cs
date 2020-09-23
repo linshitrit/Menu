@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace MenuBuilder.Core
 {
-    public class IntMenu<T> : IMenu<T>
+    public class Menu<T> : IMenu<T>
     {
         public IDictionary<T, IOption> Options { get; set; }
-       
+
+        public Menu(IDictionary<T, IOption> options)
+        {
+            Options = options;
+        }
     }
 }
 

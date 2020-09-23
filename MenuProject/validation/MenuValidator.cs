@@ -13,7 +13,7 @@ namespace MenuProject.BL
 
         //public bool CheckOption(int input, IntMenu<int> MyMenu)
         //{
-          
+
         //    return MyMenu.Options.ContainsKey(input);
         //}
 

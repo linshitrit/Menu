@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MenuBuilder.Core
+namespace MenuProject
 {
-  
-    public interface IMenu<T>
+    public class OptionRunResult : IOptionRunResult
     {
-        IDictionary<T, IOption> Options { get; set; }
-
-      
+        public bool ExitMenu { get; set; }
     }
 }

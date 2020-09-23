@@ -45,15 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleDisplayer.cs" />
-    <Compile Include="DataReader.cs" />
-    <Compile Include="IDataReader.cs" />
-    <Compile Include="IDisplayerMenu.cs" />
-    <Compile Include="IReader.cs" />
-    <Compile Include="ConsoleReader.cs" />
+    <Compile Include="displayer\ConsoleDisplayer.cs" />
+    <Compile Include="writer\ConsoleWriter.cs" />
+    <Compile Include="dataReader\DataReader.cs" />
+    <Compile Include="dataReader\IDataReader.cs" />
+    <Compile Include="displayer\IMenuDisplayer.cs" />
+    <Compile Include="reader\IReader.cs" />
+    <Compile Include="reader\ConsoleReader.cs" />
+    <Compile Include="userMenu\IUserMenu.cs" />
+    <Compile Include="writer\IWriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserMenu.cs" />
+    <Compile Include="userMenu\UserMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

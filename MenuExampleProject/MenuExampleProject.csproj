@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Option1.cs" />
-    <Compile Include="Option2.cs" />
-    <Compile Include="Option3.cs" />
-    <Compile Include="Option4.cs" />
+    <Compile Include="options\ConcatOption.cs" />
+    <Compile Include="options\UpperCaseOption.cs" />
+    <Compile Include="options\SubDicitonaryOption.cs" />
+    <Compile Include="options\ExitOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

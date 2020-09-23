@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace MenuBuilder.UI
 {
-    public interface IDisplayerMenu<T>
+    public interface IMenuDisplayer<T>
     {
         void DisplayNenu(IMenu<T> menu);
-
-       
     }
 }

@@ -14,20 +14,39 @@ namespace MenuExampleProject
     {
         static void Main(string[] args)
         {
-            Option1 firstOption = new Option1();
-            Option2 secondOption = new Option2();
-            Option4 lastOption = new Option4();
+            IWriter writer = new ConsoleWriter();
+            IOption firstOption = new ConcatOption(writer);
+            IOption secondOption = new UpperCaseOption(writer);
+
+
+            IDictionary<int, IOption> Subdictionary = new Dictionary<int, IOption>();
+            IMenu<int> subMenu = new Menu<int>(Subdictionary);
+            IMenuDisplayer<int> displaySubMenu = new ConsoleDisplayer<int>(writer);
+            IValidator<int> validator = new MenuValidator<int>();
+            IReader reader = new ConsoleReader(writer);
+            IDataReader<int> dataReader = new DataReader<int>(validator, reader);
+
+            IUserMenu<int> userSubMenu = new UserMenu<int>(displaySubMenu, dataReader, writer);
+
+
+            IOption thirdOption = new SubDicitonaryOption<int>(userSubMenu, subMenu);
+            IOption lastOption = new ExitOption();
+            IMengedMenu<int> subMengedMenu = new MengedMenu<int>(subMenu);
+            subMengedMenu.AddOption(1, firstOption);
+            subMengedMenu.AddOption(4, lastOption);
             IDictionary<int, IOption> dictionary = new Dictionary<int, IOption>();
             IMenu<int> menu = new Menu<int>(dictionary);
-            MengedMenu<int> mengedMenu = new MengedMenu<int>();
-            mengedMenu.AddOption(1, firstOption, menu);
-            mengedMenu.AddOption(2, secondOption, menu);
-            mengedMenu.AddOption(4, lastOption, menu);
-            IDisplayerMenu<int> displayMenu = new ConsoleDisplayer<int>();
-            IValidator<int> validator = new MenuValidator<int>();
-            IReader reader = new ConsoleReader();
-            IDataReader<int> dataReader = new DataReader<int>(validator,reader);
-            UserMenu<int> mainMenu = new UserMenu<int>(displayMenu, dataReader);   
+            IMengedMenu<int> mengedMenu = new MengedMenu<int>(menu);
+            mengedMenu.AddOption(1, firstOption);
+            mengedMenu.AddOption(2, secondOption);
+            mengedMenu.AddOption(3, thirdOption);
+            mengedMenu.AddOption(4, lastOption);
+            IMenuDisplayer<int> displayMenu = new ConsoleDisplayer<int>(writer);
+            //IValidator<int> validator = new MenuValidator<int>();
+            //IReader reader = new ConsoleReader(writer);
+            //IDataReader<int> dataReader = new DataReader<int>(validator, reader);
+
+            IUserMenu<int> mainMenu = new UserMenu<int>(displayMenu, dataReader, writer);
             mainMenu.Run(menu);
         }
     }

@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace MenuBuilder.UI
+namespace MenuProject
 {
-   public interface IReader
+    public interface IOptionRunResult
     {
-        int ReadInt();
-
-        string ReadString();
+        bool ExitMenu { get; set; }
     }
 }

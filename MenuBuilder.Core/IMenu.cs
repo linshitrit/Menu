@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace MenuBuilder.Core
 {
-    public interface IOption
-    {
-        string Name { get; set; }
-        string Run();
 
-    
+    public interface IMenu<T>
+    {
+        IDictionary<T, IOption> Options { get; set; }
+
 
     }
 }

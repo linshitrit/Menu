@@ -27,7 +27,7 @@ namespace MenuBuilder.UI
             int optionInt = int.Parse(option);
             return optionInt;
         }
-
+            
         public string ReadString()
         {
             Writer.WriteLine("enter an string option in the menu");

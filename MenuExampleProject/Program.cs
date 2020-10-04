@@ -42,13 +42,9 @@ namespace MenuExampleProject
             mengedMenu.AddOption(3, thirdOption);
             mengedMenu.AddOption(4, lastOption);
             IMenuDisplayer<int> displayMenu = new ConsoleDisplayer<int>(writer);
-            //IValidator<int> validator = new MenuValidator<int>();
-            //IReader reader = new ConsoleReader(writer);
-            //IDataReader<int> dataReader = new DataReader<int>(validator, reader);
 
             IUserMenu<int> mainMenu = new UserMenu<int>(displayMenu, dataReader, writer);
             mainMenu.Run(menu);
         }
     }
-
 }

@@ -10,8 +10,6 @@ namespace MenuProject
 {
     public interface IMengedMenu<T>
     {
-        IMenu<T> Menu { get; set; }
-
         void AddOption(T input, IOption option);
 
         void RemoveOption(T input);
